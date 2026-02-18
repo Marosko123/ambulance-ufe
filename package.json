@@ -46,5 +46,20 @@
     "jest-cli": "^29.7.0",
     "puppeteer": "^24.3.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "overrides": {
+    "@babel/core": "7.28.6",
+    "@babel/code-frame": "7.28.6",
+    "@babel/compat-data": "7.28.6",
+    "@babel/generator": "7.28.6",
+    "@babel/helper-compilation-targets": "7.28.6",
+    "@babel/helper-globals": "7.28.0",
+    "@babel/helper-string-parser": "7.27.1",
+    "@babel/parser": "7.28.6",
+    "@babel/traverse": "7.28.6",
+    "@babel/types": "7.28.6"
+  },
+  "dependencies": {
+    "@material/web": "^2.4.1"
+  }
 }

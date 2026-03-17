@@ -7,9 +7,11 @@
 
 ## Properties
 
-| Property  | Attribute  | Description | Type     | Default     |
-| --------- | ---------- | ----------- | -------- | ----------- |
-| `entryId` | `entry-id` |             | `string` | `undefined` |
+| Property      | Attribute      | Description | Type     | Default     |
+| ------------- | -------------- | ----------- | -------- | ----------- |
+| `ambulanceId` | `ambulance-id` |             | `string` | `undefined` |
+| `apiBase`     | `api-base`     |             | `string` | `undefined` |
+| `entryId`     | `entry-id`     |             | `string` | `undefined` |
 
 
 ## Events

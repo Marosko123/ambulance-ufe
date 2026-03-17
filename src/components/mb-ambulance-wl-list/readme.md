@@ -1,4 +1,4 @@
-# mb-ambulance-wl-app
+# mb-ambulance-wl-list
 
 
 
@@ -11,22 +11,26 @@
 | ------------- | -------------- | ----------- | -------- | ----------- |
 | `ambulanceId` | `ambulance-id` |             | `string` | `undefined` |
 | `apiBase`     | `api-base`     |             | `string` | `undefined` |
-| `basePath`    | `base-path`    |             | `string` | `""`        |
+
+
+## Events
+
+| Event           | Description | Type                  |
+| --------------- | ----------- | --------------------- |
+| `entry-clicked` |             | `CustomEvent<string>` |
 
 
 ## Dependencies
 
-### Depends on
+### Used by
 
-- [mb-ambulance-wl-editor](../mb-ambulance-wl-editor)
-- [mb-ambulance-wl-list](../mb-ambulance-wl-list)
+ - [mb-ambulance-wl-app](../mb-ambulance-wl-app)
 
 ### Graph
 ```mermaid
 graph TD;
-  mb-ambulance-wl-app --> mb-ambulance-wl-editor
   mb-ambulance-wl-app --> mb-ambulance-wl-list
-  style mb-ambulance-wl-app fill:#f9f,stroke:#333,stroke-width:4px
+  style mb-ambulance-wl-list fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

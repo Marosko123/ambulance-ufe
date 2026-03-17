@@ -23,5 +23,9 @@ export const config: Config = {
   ],
   testing: {
     browserHeadless: "shell",
+    transformIgnorePatterns: ["/node_modules/(?!axios)"],
+    transform: {
+      "^.+\\.(js|jsx)$": "babel-jest",
+    },
   },
 };

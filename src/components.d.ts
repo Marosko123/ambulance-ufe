@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MbAmbulanceWlApp {
+        "ambulanceId": string;
+        "apiBase": string;
         /**
           * @default ""
          */
@@ -16,6 +18,8 @@ export namespace Components {
         "entryId": string;
     }
     interface MbAmbulanceWlList {
+        "ambulanceId": string;
+        "apiBase": string;
     }
 }
 export interface MbAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
@@ -75,6 +79,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface MbAmbulanceWlApp {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         /**
           * @default ""
          */
@@ -85,20 +91,28 @@ declare namespace LocalJSX {
         "onEditor-closed"?: (event: MbAmbulanceWlEditorCustomEvent<string>) => void;
     }
     interface MbAmbulanceWlList {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "onEntry-clicked"?: (event: MbAmbulanceWlListCustomEvent<string>) => void;
     }
 
     interface MbAmbulanceWlAppAttributes {
         "basePath": string;
+        "apiBase": string;
+        "ambulanceId": string;
     }
     interface MbAmbulanceWlEditorAttributes {
         "entryId": string;
+    }
+    interface MbAmbulanceWlListAttributes {
+        "apiBase": string;
+        "ambulanceId": string;
     }
 
     interface IntrinsicElements {
         "mb-ambulance-wl-app": Omit<MbAmbulanceWlApp, keyof MbAmbulanceWlAppAttributes> & { [K in keyof MbAmbulanceWlApp & keyof MbAmbulanceWlAppAttributes]?: MbAmbulanceWlApp[K] } & { [K in keyof MbAmbulanceWlApp & keyof MbAmbulanceWlAppAttributes as `attr:${K}`]?: MbAmbulanceWlAppAttributes[K] } & { [K in keyof MbAmbulanceWlApp & keyof MbAmbulanceWlAppAttributes as `prop:${K}`]?: MbAmbulanceWlApp[K] };
         "mb-ambulance-wl-editor": Omit<MbAmbulanceWlEditor, keyof MbAmbulanceWlEditorAttributes> & { [K in keyof MbAmbulanceWlEditor & keyof MbAmbulanceWlEditorAttributes]?: MbAmbulanceWlEditor[K] } & { [K in keyof MbAmbulanceWlEditor & keyof MbAmbulanceWlEditorAttributes as `attr:${K}`]?: MbAmbulanceWlEditorAttributes[K] } & { [K in keyof MbAmbulanceWlEditor & keyof MbAmbulanceWlEditorAttributes as `prop:${K}`]?: MbAmbulanceWlEditor[K] };
-        "mb-ambulance-wl-list": MbAmbulanceWlList;
+        "mb-ambulance-wl-list": Omit<MbAmbulanceWlList, keyof MbAmbulanceWlListAttributes> & { [K in keyof MbAmbulanceWlList & keyof MbAmbulanceWlListAttributes]?: MbAmbulanceWlList[K] } & { [K in keyof MbAmbulanceWlList & keyof MbAmbulanceWlListAttributes as `attr:${K}`]?: MbAmbulanceWlListAttributes[K] } & { [K in keyof MbAmbulanceWlList & keyof MbAmbulanceWlListAttributes as `prop:${K}`]?: MbAmbulanceWlList[K] };
     }
 }
 export { LocalJSX as JSX };

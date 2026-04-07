@@ -1,8 +1,6 @@
 :host {
    display: block;
    width: 100%;
-   position: relative;
-   padding-bottom: 5rem;
 }
 
 .error {
@@ -14,9 +12,8 @@
 }
 
 .add-button {
-   position: absolute;
-   right: 1rem;
-   bottom: 1rem;
+   display: block;
+   margin: 1rem 1rem 1rem auto;
    --md-filled-icon-button-container-size: 4rem;
    --md-filled-icon-button-icon-size: 3rem;
 }

@@ -1,4 +1,5 @@
 import { Component, Host, Prop, State, h } from '@stencil/core';
+import { installAzureDemoMock, isAzureStandalone } from '../../mock/azure-demo';
 
 declare global {
   interface Window { navigation: any; }
@@ -17,6 +18,9 @@ export class MbAmbulanceWlApp {
   @Prop() ambulanceId: string;
 
   componentWillLoad() {
+    if (isAzureStandalone()) {
+      installAzureDemoMock();
+    }
     const baseUri = new URL(this.basePath, document.baseURI || "/").pathname;
 
     const toRelative = (path: string) => {

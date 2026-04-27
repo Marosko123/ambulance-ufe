@@ -1,17 +1,72 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="sk">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <base href="/" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <title>Ambulance Waiting List Tester</title>
+    <title>Ambulance Waiting List - Maros Bednar</title>
 
     <script type="module" src="/build/ambulance-ufe.esm.js"></script>
     <script nomodule src="/build/ambulance-ufe.js"></script>
+    <style>
+      body { margin: 0; padding: 0; font-family: Roboto, sans-serif; }
+      .standalone-info {
+        max-width: 720px;
+        margin: 64px auto;
+        padding: 32px;
+        border: 1px solid #e0e0e0;
+        border-radius: 16px;
+        background: #f0f4ff;
+        box-shadow: 0 2px 12px rgba(33, 150, 243, 0.08);
+        line-height: 1.6;
+      }
+      .standalone-info h1 { margin: 0 0 16px; color: #1565c0; font-weight: 500; }
+      .standalone-info p { margin: 12px 0; }
+      .standalone-info a {
+        color: #1565c0;
+        font-weight: 500;
+        text-decoration: none;
+        border-bottom: 2px solid #90caf9;
+      }
+      .standalone-info a:hover { border-bottom-color: #1565c0; }
+      .standalone-info code {
+        background: #e3f2fd;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: 'JetBrains Mono', Consolas, monospace;
+        font-size: 0.9em;
+      }
+      .standalone-info hr {
+        margin: 24px 0;
+        border: none;
+        border-top: 1px solid #bbdefb;
+      }
+      .standalone-info small { color: #1976d2; }
+    </style>
   </head>
-  <body style="font-family: 'Roboto'; ">
-    <mb-ambulance-wl-app ambulance-id="bobulova" api-base="http://localhost:5001/api" base-path="/ambulance-wl/"></mb-ambulance-wl-app>
+  <body>
+    <div id="ambulance-root"></div>
+    <script>
+      (function () {
+        var host = window.location.hostname;
+        var isLocalDev = /^(localhost|127\.|::1|0\.0\.0\.0)$/.test(host) || host === '';
+        var root = document.getElementById('ambulance-root');
+        if (isLocalDev) {
+          root.innerHTML = '<mb-ambulance-wl-app ambulance-id="bobulova" api-base="http://localhost:5001/api" base-path="/ambulance-wl/"></mb-ambulance-wl-app>';
+        } else {
+          root.innerHTML =
+            '<div class="standalone-info">' +
+            '<h1>Ambulance Waiting List</h1>' +
+            '<p>Toto je samostatné <strong>front-end</strong> nasadenie projektu na Azure App Service. Slúži ako ukážka, že build pipeline a kontajnerizovaná SPA fungujú v Azure prostredí.</p>' +
+            '<p>Plne funkčná aplikácia (s back-endom Go + Gin a databázou MongoDB) beží v zdielanom WAC FIIT klastri:</p>' +
+            '<p>&rarr; <a href="https://wac-hospital.westeurope.cloudapp.azure.com/fea/mb-ambulance-wl/list">Otvor Ambulance Waiting List v WAC clustri</a></p>' +
+            '<hr>' +
+            '<p><small>Author: Maroš Bednár &middot; Image: <code>bednarmaros341/ambulance-ufe</code> &middot; <a href="https://github.com/Marosko123/ambulance-ufe">GitHub</a></small></p>' +
+            '</div>';
+        }
+      })();
+    </script>
   </body>
 </html>

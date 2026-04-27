@@ -203,8 +203,8 @@ export class MbAmbulanceWlEditor {
     this.isValid = true;
     for (let i = 0; i < this.formElement.children.length; i++) {
       const element = this.formElement.children[i]
-      if ("reportValidity" in element) {
-        const valid = (element as HTMLInputElement).reportValidity();
+      if ("checkValidity" in element) {
+        const valid = (element as HTMLInputElement).checkValidity();
         this.isValid &&= valid;
       }
     }

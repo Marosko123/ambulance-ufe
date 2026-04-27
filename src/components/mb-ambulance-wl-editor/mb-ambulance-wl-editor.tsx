@@ -28,7 +28,7 @@ export class MbAmbulanceWlEditor {
       this.entry = {
         id: "@new",
         patientId: "",
-        waitingSince: "",
+        waitingSince: new Date().toISOString(),
         estimatedDurationMinutes: 15
       };
       return this.entry;
